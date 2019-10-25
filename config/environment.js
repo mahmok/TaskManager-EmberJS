@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'todo-list',
     environment,
-    rootURL: 'https://mahmok.github.io/TaskManager-EmberJS/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
