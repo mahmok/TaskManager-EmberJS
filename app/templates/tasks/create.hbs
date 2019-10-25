@@ -1,0 +1,8 @@
+<BsButton @onClick={{action "goBack"}}>Back</BsButton>
+<br>
+<br>
+<BsForm @formLayout="vertical" @model={{this.task}} @onSubmit={{action "createTask"}} as |form|>
+  <form.element @controlType="text" @label="Title" @placeholder="Title" @property="title" @required={{true}} />
+  <form.element @controlType="description" @label="Description" @placeholder="Description" @property="description" @required={{true}} />
+  <BsButton @defaultText="Create" @type="primary" @buttonType="submit" />
+</BsForm>

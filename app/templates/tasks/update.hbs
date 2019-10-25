@@ -1,0 +1,16 @@
+<BsButton @onClick={{action "goBack"}}>Back</BsButton>
+<br>
+<br>
+<BsForm @formLayout="vertical" @model={{this.task}} @onSubmit={{action "update"}} as |form|>
+  <form.element @controlType="text" @label="Title" @placeholder="Title" @property="title" @required={{true}} />
+  <form.element @controlType="description" @label="Description" @placeholder="Description" @property="description" @required={{true}} />
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Is Done?</label>
+    <select value="true" onchange={{action "onSelectChange"}} class="form-control" id="exampleFormControlSelect2">
+        <option selected={{eq this.task.isDone 'false'  }} value="false">NO</option>
+      <option selected={{eq this.task.isDone  'true' }}   value="true">YES</option>
+
+    </select>
+  </div>
+  <BsButton @defaultText="Update" @type="primary" @buttonType="submit" />
+</BsForm>

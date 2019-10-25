@@ -1,0 +1,30 @@
+<BsButton @onClick={{action "goToCreateTask"}} @type="primary">Create Task</BsButton>
+<br>
+<br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Done</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model as |task|}}
+    <tr>
+      <th scope="row">{{task.id}}</th>
+      <td>{{task.title}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.isDone}}</td>
+      <td>{{format-timestamp task.createdAt}}</td>
+      <td>
+        <BsButton @onClick={{action "goToUpdateTask" task.id}} @type="secondary">Update</BsButton>
+        <BsButton @onClick={{action "deleteTask" task.id}} @type="danger">Delete</BsButton>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

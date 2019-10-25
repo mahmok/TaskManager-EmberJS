@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('tasks', function() {
+    this.route('create');
+    this.route('update', {path: "/:taskId"});
+  });
 });
 
 export default Router;
